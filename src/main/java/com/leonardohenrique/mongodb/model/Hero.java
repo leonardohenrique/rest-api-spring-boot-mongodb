@@ -1,5 +1,8 @@
 package com.leonardohenrique.mongodb.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,6 +13,8 @@ public class Hero {
 	private String id;
 
 	private String name;
+
+	private List<String> powers = new ArrayList<>();
 
 	public String getId() {
 		return id;
@@ -23,4 +28,11 @@ public class Hero {
 		this.name = name;
 	}
 
+	public List<String> getPowers() {
+		return powers;
+	}
+
+	public void setPowers(List<String> powers) {
+		this.powers = powers;
+	}
 }

@@ -1,9 +1,11 @@
 package com.leonardohenrique.mongodb.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import com.leonardohenrique.mongodb.event.CascadeSaveMongoEventListener;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
@@ -25,4 +27,9 @@ public class MongoConfiguration extends AbstractMongoConfiguration {
 	protected String getMappingBasePackage() {
 		return "com.leonardohenrique";
 	}
+	
+    @Bean
+    public CascadeSaveMongoEventListener cascadingMongoEventListener() {
+        return new CascadeSaveMongoEventListener();
+    }
 }

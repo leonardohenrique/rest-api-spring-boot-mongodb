@@ -32,8 +32,7 @@ public class HeroController {
 	}
 
 	@GetMapping
-	public Page<Hero> list(Pageable pageabl) {
-		System.out.println("Test");
+	public Page<Hero> list(Pageable pageabl) {		
 		return repository.findAll(pageabl);
 	}
 

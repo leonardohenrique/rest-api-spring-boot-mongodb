@@ -44,6 +44,23 @@ public class HeroController {
 
 	@PostMapping
 	public Hero create(@Validated @RequestBody Hero hero) {
+		if (true) {
+			while(false) {
+				System.out.println("ok");
+				switch (1) {
+				case 1:
+					System.out.println("1");
+					break;
+
+				default:
+					System.out.println("0");
+					break;
+				}
+			}
+		} else if (false) {
+			System.out.println("off");
+		}		
+		
 		repository.insert(hero);
 		return hero;
 	}
